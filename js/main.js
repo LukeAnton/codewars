@@ -1,3 +1,22 @@
+sortArray = a => {
+  let out = [];
+  const oddSort = a.filter(odd => odd % 2 !== 0).sort((x, y) => x - y);
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] % 2 !== 0) {
+      out.push(null);
+    } else {
+      out.push(a[i]);
+    }
+  }
+  for (let o = 0; o < out.length; o++) {
+    if (out[o] === null) {
+      out[o] = oddSort.shift();
+    }
+  }
+  return out;
+};
+
+console.log(sortArray([5, 3, 2, 8, 1, 4])); //result [1, 3, 2, 8, 5, 4]
 // monkeyCount = n => {
 //   res = [];
 //   for (i = 0; i < n; i++) {
