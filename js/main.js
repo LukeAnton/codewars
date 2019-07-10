@@ -1,20 +1,20 @@
-countBy = (x, n) => {
-  var z = [];
-  for (let i = x; i <= n; i * n) {
-    z.push(x * i);
-  }
-  return z;
-};
-// function countBy(x, n) {
-//     var z = [];
-//     for (i = 1; i <= n; i++) {
-//         z.push(x * i);
-//     }
-//     return z;
-// }
 
-console.log(countBy(1, 5));
-console.log(countBy(2, 5));
+//  descendingOrder= (n)=> parseInt(n.toString().split('').sort().reverse().join(''))
+
+ 
+// console.log(descendingOrder(8273));
+
+
+// countBy = (x, n) => {
+//   let z = [];
+//   for (let i = x; i <= n; i * n) {
+//     z.push(x * i);
+//   }  
+//   return z;
+// };
+//
+// console.log(countBy(1, 5));
+// console.log(countBy(2, 5));
 // Test.assertSimilar(countBy(1,5), [1,2,3,4,5], "Array does not match")
 // Test.assertSimilar(countBy(2,5), [2,4,6,8,10], "Array does not match")
 
