@@ -1,22 +1,86 @@
-sortArray = a => {
-  let out = [];
-  const oddSort = a.filter(odd => odd % 2 !== 0).sort((x, y) => x - y);
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] % 2 !== 0) {
-      out.push(null);
-    } else {
-      out.push(a[i]);
-    }
+countBy = (x, n) => {
+  var z = [];
+  for (let i = x; i <= n; i * n) {
+    z.push(x * i);
   }
-  for (let o = 0; o < out.length; o++) {
-    if (out[o] === null) {
-      out[o] = oddSort.shift();
-    }
-  }
-  return out;
+  return z;
 };
+// function countBy(x, n) {
+//     var z = [];
+//     for (i = 1; i <= n; i++) {
+//         z.push(x * i);
+//     }
+//     return z;
+// }
 
-console.log(sortArray([5, 3, 2, 8, 1, 4])); //result [1, 3, 2, 8, 5, 4]
+console.log(countBy(1, 5));
+console.log(countBy(2, 5));
+// Test.assertSimilar(countBy(1,5), [1,2,3,4,5], "Array does not match")
+// Test.assertSimilar(countBy(2,5), [2,4,6,8,10], "Array does not match")
+
+//
+// Create a function with two arguments that will return a list of length (n) with multiples of (x).
+//
+// Assume both the given number and the number of times to count will be positive numbers greater than 0.
+//
+// Return the results as an array (or list in Python, Haskell or Elixir).
+//
+// Examples:
+
+// century = year => Math.ceil(year / 100);
+//
+// console.log(century(1705));
+// console.log(century(1900));
+// console.log(century(1601));
+// console.log(century(2000));
+// console.log(century(89));
+// Test.assertEquals(century(1705), 18, 'Testing for year 1705');
+// Test.assertEquals(century(1900), 19, 'Testing for year 1900');
+// Test.assertEquals(century(1601), 17, 'Testing for year 1601');
+// Test.assertEquals(century(2000), 20, 'Testing for year 2000');
+// Test.assertEquals(century(89), 1, 'Testing for year 89');
+
+// The first century spans from the year 1 up to and including the year 100, The second - from the year 101 up to and including the year 200, etc.
+
+// stray = n => {
+//   let as = n.sort();
+//   if (as[0] !== as[1]) {
+//     return as[0];
+//   }
+//   return as[as.length - 1];
+// };
+//
+// console.log(stray([2, 1, 1]));
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+//
+// Complete the method which accepts such an array, and returns that single different number.
+//
+// The input array will always be valid! (odd-length >= 3)
+
+// maps = x => x.map(d => d * 2);
+//
+// console.log(maps([1, 2, 3]));
+
+// sortArray = a => {
+//   let result = [];
+//   const oddSort = a.filter(odd => odd % 2 !== 0).sort((x, y) => x - y);
+//   for (let i = 0; i < a.length; i++) {
+//     if (a[i] % 2 !== 0) {
+//       result.push(null);
+//     } else {
+//       result.push(a[i]);
+//     }
+//   }
+//   for (let o = 0; o < result.length; o++) {
+//     if (result[o] === null) {
+//       result[o] = oddSort.shift();
+//     }
+//   }
+//   return result;
+// };
+//
+// console.log(sortArray([5, 3, 2, 8, 1, 4])); //result [1, 3, 2, 8, 5, 4]
 // monkeyCount = n => {
 //   res = [];
 //   for (i = 0; i < n; i++) {
@@ -466,3 +530,12 @@ console.log(sortArray([5, 3, 2, 8, 1, 4])); //result [1, 3, 2, 8, 5, 4]
 // }
 //
 // solution([6, 1, 4, 6, 3, 2, 7, 4], 3, 2);
+
+// stray = n => {
+//   let a = n.sort();
+//
+//   if (a[0] !== a[1]) {
+//     return a[0];
+//   }
+//   return a[a.length - 1];
+// };
