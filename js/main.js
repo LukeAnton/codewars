@@ -1,15 +1,66 @@
+diamond = n => {
+  if (n <= 0 || n % 2 === 0) {
+    return null;
+  } else {
+    // -2 after each line.
+    let starQty = n;
+    // +1 after each line.
+    let spaces = 0;
+    let diamArr = [];
+
+    while (starQty >= 1) {
+      if (starQty === n) {
+        let initialString = "";
+
+        for (i = 0; i < starQty; i++) {
+          initialString += "*";
+        }
+        initialString += "\n";
+
+        diamArr.push(initialString);
+
+        starQty -= 2;
+        spaces += 1;
+      } else {
+        let stringTemp = "";
+        for (j = 0; j < spaces; j++) {
+          stringTemp += " ";
+        }
+        for (l = 0; l < starQty; l++) {
+          stringTemp += "*";
+        }
+        stringTemp += "\n";
+        diamArr.unshift(stringTemp);
+        diamArr.push(stringTemp);
+        starQty -= 2;
+        spaces += 1;
+      }
+    }
+    diam = diamArr.join("");
+  }
+  return diam;
+};
+console.log(diamond(5));
+//
+// Test.describe( "diamond()", function(){
+//
+//   Test.assertEquals(diamond(1), "*\n")
+//   Test.assertEquals(diamond(3), " *\n***\n *\n")
+//   Test.assertEquals(diamond(5), "  *\n ***\n*****\n ***\n  *\n")
+//   Test.assertEquals(diamond(2), null)
+//   Test.assertEquals(diamond(-3), null)
+//   Test.assertEquals(diamond(0), null)
+// });
 
 //  descendingOrder= (n)=> parseInt(n.toString().split('').sort().reverse().join(''))
 
- 
 // console.log(descendingOrder(8273));
-
 
 // countBy = (x, n) => {
 //   let z = [];
 //   for (let i = x; i <= n; i * n) {
 //     z.push(x * i);
-//   }  
+//   }
 //   return z;
 // };
 //
