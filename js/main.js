@@ -1,46 +1,108 @@
-diamond = n => {
-  if (n <= 0 || n % 2 === 0) {
-    return null;
-  } else {
-    // -2 after each line.
-    let starQty = n;
-    // +1 after each line.
-    let spaces = 0;
-    let diamArr = [];
-
-    while (starQty >= 1) {
-      if (starQty === n) {
-        let initialString = "";
-
-        for (i = 0; i < starQty; i++) {
-          initialString += "*";
-        }
-        initialString += "\n";
-
-        diamArr.push(initialString);
-
-        starQty -= 2;
-        spaces += 1;
-      } else {
-        let stringTemp = "";
-        for (j = 0; j < spaces; j++) {
-          stringTemp += " ";
-        }
-        for (l = 0; l < starQty; l++) {
-          stringTemp += "*";
-        }
-        stringTemp += "\n";
-        diamArr.unshift(stringTemp);
-        diamArr.push(stringTemp);
-        starQty -= 2;
-        spaces += 1;
-      }
-    }
-    diam = diamArr.join("");
-  }
-  return diam;
+// minValue = v => {
+//   let res = [];
+//   let sorted = v.sort();
+//   for (let i = 0; i < sorted.length; i++) {
+//     res.push(sorted[i]);
+//     for (let j = 0; j + 1 < res.length; j++) {
+//       if (sorted[i] === res[j]) {
+//         res.pop(sorted[j]);
+//       }
+//     }
+//   }
+//   return parseInt(res.join(""));
+// };
+minValue = v => {
+  const set1 = new Set(v);
+  return parseInt(
+    Array.from(set1)
+      .sort()
+      .join("")
+  );
 };
-console.log(diamond(5));
+
+// console.log(minValue([1, 3, 1]));
+console.log(minValue([4, 7, 5, 7]));
+
+//
+// describe("Basic tests",_=>{
+//   Test.assertEquals(minValue([1, 3, 1]), 13);
+//   Test.assertEquals(minValue([4, 7, 5, 7]), 457);
+//   Test.assertEquals(minValue([4, 8, 1, 4]), 148);
+//   Test.assertEquals(minValue([5, 7, 9, 5, 7]), 579);
+//   Test.assertEquals(minValue([6, 7, 8, 7, 6, 6]), 678);
+//   Test.assertEquals(minValue([5, 6, 9, 9, 7, 6, 4]), 45679);
+//   Test.assertEquals(minValue([1, 9, 1, 3, 7, 4, 6, 6, 7]), 134679);
+//   Test.assertEquals(minValue([3, 6, 5, 5, 9, 8, 7, 6, 3, 5, 9]), 356789);
+//   Test.assertEquals(minValue([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), 1);
+//   Test.assertEquals(minValue([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), 0);
+// });
+
+// Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once ( ignore duplicates).
+//
+// Notes :
+// Only positive integers will be passed to the function (> 0 ), no negatives or zeros.
+// summation = n => (n * +1) / 2;
+
+// summation = n => {
+//   let res = 0;
+//   for (let i = 1; i < n + 1; i++) {
+//     res += i;
+//   }
+//   return res;
+// };
+
+// console.log(summation(4));
+// Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+// // describe('summation', function () {
+//   it('should return the correct total', function () {
+//     Test.assertEquals(summation(1), 1)
+//     Test.assertEquals(summation(8), 36)
+//   })
+// })
+
+// diamond = n => {
+//   if (n <= 0 || n % 2 === 0) {
+//     return null;
+//   } else {
+//     // -2 after each line.
+//     let starQty = n;
+//     // +1 after each line.
+//     let spaces = 0;
+//     let diamArr = [];
+//
+//     while (starQty >= 1) {
+//       if (starQty === n) {
+//         let initialString = "";
+//
+//         for (i = 0; i < starQty; i++) {
+//           initialString += "*";
+//         }
+//         initialString += "\n";
+//
+//         diamArr.push(initialString);
+//
+//         starQty -= 2;
+//         spaces += 1;
+//       } else {
+//         let stringTemp = "";
+//         for (j = 0; j < spaces; j++) {
+//           stringTemp += " ";
+//         }
+//         for (l = 0; l < starQty; l++) {
+//           stringTemp += "*";
+//         }
+//         stringTemp += "\n";
+//         diamArr.unshift(stringTemp);
+//         diamArr.push(stringTemp);
+//         starQty -= 2;
+//         spaces += 1;
+//       }
+//     }
+//     diam = diamArr.join("");
+//   }
+//   return diam;
+// };
+// console.log(diamond(5));
 //
 // Test.describe( "diamond()", function(){
 //
