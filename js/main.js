@@ -1,3 +1,22 @@
+//CharCount
+const charCount = str => {
+  let count = {};
+  for (let char of str) {
+    char = char.toLowerCase();
+    count[char] > 0 ? count[char]++ : (count[char] = 1);
+  }
+  return count;
+};
+
+console.log(charCount("Hello"));
+
+
+// matchArrays = (v, r) => v.filter(e => r.includes(e));
+
+// console.log(
+//   matchArrays(["Perl", "Closure", "JavaScript"], ["Perl", "C++", "JavaScript"])
+// );
+
 // minValue = v => {
 //   let res = [];
 //   let sorted = v.sort();
@@ -11,17 +30,17 @@
 //   }
 //   return parseInt(res.join(""));
 // };
-minValue = v => {
-  const set1 = new Set(v);
-  return parseInt(
-    Array.from(set1)
-      .sort()
-      .join("")
-  );
-};
-
-// console.log(minValue([1, 3, 1]));
-console.log(minValue([4, 7, 5, 7]));
+// minValue = v => {
+//   const set1 = new Set(v);
+//   return parseInt(
+//     Array.from(set1)
+//       .sort()
+//       .join("")
+//   );
+// };
+//
+// // console.log(minValue([1, 3, 1]));
+// console.log(minValue([4, 7, 5, 7]));
 
 //
 // describe("Basic tests",_=>{
