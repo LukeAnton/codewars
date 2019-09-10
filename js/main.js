@@ -1,15 +1,37 @@
-//CharCount
-const charCount = str => {
-  let count = {};
-  for (let char of str) {
-    char = char.toLowerCase();
-    count[char] > 0 ? count[char]++ : (count[char] = 1);
-  }
-  return count;
+const findShort = s => {
+  const sArray = s.split(" ");
+  const lengthArray = sArray.map(strLength => strLength.length);
+  return Math.min(...lengthArray);
 };
 
-console.log(charCount("Hello"));
+console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+console.log(
+  findShort(
+    "turns out random test cases are easier than writing out basic ones",
+  ),
+);
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// //CharCount
+// const charCount = str => {
+//   let count = {};
+//   for (let char of str) {
+//     char = char.toLowerCase();
+//     count[char] > 0 ? count[char]++ : (count[char] = 1);
+//   }
+//   return count;
+// };
+
+// console.log(charCount("Hello"));
 
 // matchArrays = (v, r) => v.filter(e => r.includes(e));
 
