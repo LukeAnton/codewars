@@ -1,14 +1,16 @@
-const findShort = s => {
-  const sArray = s.split(" ");
-  const lengthArray = sArray.map(strLength => strLength.length);
-  return Math.min(...lengthArray);
-};
+//unique values 
+// const names = ['John', 'Paul', 'George', 'Ringo', 'John'];
 
-console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
-console.log(
-  findShort(
-    "turns out random test cases are easier than writing out basic ones",
-  ),
+// let unique = [...new Set(names)]
+// console.log(unique); // 'John', 'Paul', 'George', 'Ringo'
+
+// findShort = s => Math.min(...s.split(" ").map(strLen => strLen.length));
+
+// console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+// console.log(
+//   findShort(
+//     "turns out random test cases are easier than writing out basic ones",
+//   ),
 );
 
 //
